@@ -25,11 +25,6 @@ def get_outgroup_blastdb(outgroup_cds_1, outgroup_cds_2, outgroup_cds_3, outgrou
                 # >lcl|NC_036902.1_cds_XP_024208912.1_77757 [gene=LOC112206852] ...
                 sacc = header.split("|")[1].split(" ")[0].strip()   
                 species_dict[sacc] = sp_name
-    
-    for i, (key, value) in enumerate(species_dict.items()):
-        if i >= 50:
-            break
-        print(f"{key}: {value}")
 
     # Combine all input files into one
     with open(combined_file, 'w') as outf:
